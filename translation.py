@@ -6,6 +6,9 @@ import os
 from config import Config
 
 class Translation(object):
+
+PHOTO_URL = "https://image.zaw-myo.workers.dev/image/c910e030-0067-4855-bd39-4dffb60780ca"
+  
   START_TXT = """<b>ʜɪ {}
 
 ➻ ɪ'ᴍ ᴀ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀᴜᴛᴏ ꜰᴏʀᴡᴀʀᴅ ʙᴏᴛ
