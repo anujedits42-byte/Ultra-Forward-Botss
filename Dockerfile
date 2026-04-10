@@ -1,20 +1,14 @@
-FROM python:3.8-slim-buster
+FROM python:3.10-slim
 
-# Install required packages
-RUN apt update && apt install -y git \
+RUN apt-get update && apt-get install -y git \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
 COPY requirements.txt /requirements.txt
 
-# Install python packages
-RUN pip3 install -U pip && pip3 install -U -r /requirements.txt
+RUN pip install --upgrade pip && pip install -r /requirements.txt
 
-# Create working directory
 WORKDIR /fwdbot
-
-# Copy project files
 COPY . /fwdbot
 
-# Run bot
 CMD ["bash", "start.sh"]
