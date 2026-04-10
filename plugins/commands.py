@@ -18,8 +18,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMedi
 main_buttons = [[
         InlineKeyboardButton('❗️ʜᴇʟᴘ', callback_data='help')
         ],[
-        InlineKeyboardButton('📜 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/Silicon_Botz'),
-        InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/Silicon_Bot_Update')
+        InlineKeyboardButton('📜 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/log_channel_a'),
+        InlineKeyboardButton('📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/log_channel_a')
         ],[
         InlineKeyboardButton('💳 ᴅᴏɴᴀᴛᴇ', callback_data='donate')
         ]]
@@ -41,7 +41,7 @@ async def start(client, message):
             # Send a message asking the user to join the channel
             join_button = [
                 [InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f"{Config.FORCE_SUB_CHANNEL}")],
-                [InlineKeyboardButton("↻ ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/{client.username}?start=start")]
+                [InlineKeyboardButton("↻ ᴛʀʏ ᴀɢᴀɪɴ", url=f"https://t.me/log_channel_a?start=start")]
             ]
             await client.send_message(
                 chat_id=message.chat.id,
