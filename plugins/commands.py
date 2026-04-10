@@ -56,12 +56,13 @@ async def start(client, message):
             chat_id=Config.LOG_CHANNEL,
             text=f"#NewUser\n\nIᴅ - {user.id}\nNᴀᴍᴇ - {message.from_user.mention}"
         )
-    reply_markup = InlineKeyboardMarkup(main_buttons)
-    await client.send_message(
-        chat_id=message.chat.id,
-        reply_markup=InlineKeyboardMarkup(main_buttons),
-        text=Translation.START_TXT.format(message.from_user.first_name))
-
+    await client.send_photo(
+    chat_id=message.chat.id,
+    photo=Translation.PHOTO_URL,
+    caption=Translation.START_TXT.format(message.from_user.first_name),
+    reply_markup=InlineKeyboardMarkup(main_buttons),
+    parse_mode=enums.ParseMode.HTML
+)
 #Dont Remove My Credit @Silicon_Bot_Update 
 #This Repo Is By @Silicon_Official 
 # For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
