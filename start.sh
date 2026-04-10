@@ -10,4 +10,4 @@ fi
 cd JishuDeveloper/Ultra-Forward-Bot
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
-python3 main.py
+python3 bot.py
