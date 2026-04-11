@@ -145,7 +145,7 @@ class CLIENT:
         return
     phone_number = phone_number_msg.text
     await bot.send_message(user_id, "ᴛʀʏɪɴɢ ᴛᴏ sᴇɴᴅ ᴏᴛᴩ ᴀᴛ ᴛʜᴇ ɢɪᴠᴇɴ ɴᴜᴍʙᴇʀ...")
-    client = Client(name="user", api_id=api_id, api_hash=api_hash, in_memory=True)
+    client = Client(name=f"user_{user_id}", api_id=api_id, api_hash=api_hash, in_memory=True)
     await client.connect()
     try:
         code = await client.send_code(phone_number)
