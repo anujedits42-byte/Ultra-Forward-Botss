@@ -160,6 +160,9 @@ class CLIENT:
     except TimeoutError:
         await bot.send_message(user_id, "Time limit reached of 10 minutes.\n\nPlease start generating your session again.")
         return
+        except Exception as e:
+    await bot.send_message(user_id, f"Error: {e}")
+    return
     phone_code = phone_code_msg.text.replace(" ", "")
     try:
         await client.sign_in(phone_number, code.phone_code_hash, phone_code)
