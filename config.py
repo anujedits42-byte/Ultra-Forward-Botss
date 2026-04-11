@@ -8,7 +8,7 @@ from os import environ
 class Config:
     API_ID = environ.get("API_ID", "34446649")
     API_HASH = environ.get("API_HASH", "8dc570c08d8e35e88fb9bfc73c65d7fa")
-    BOT_TOKEN = environ.get("BOT_TOKEN", "8707891981:AAGHOAc6F5lwnLf8R1zBfm2V9PSdelfm010") 
+    BOT_TOKEN = environ.get("BOT_TOKEN", "8760503947:AAHelwW2hXYNEQXZAKVKPPZV-DQMVU8f_mQ") 
     BOT_SESSION = environ.get("BOT_SESSION", "Auto_Forward") 
     DATABASE_URI = environ.get("DATABASE", "mongodb+srv://Anujedit:Anujedit@cluster0.7cs2nhd.mongodb.net/?appName=Cluster0")
     DATABASE_NAME = environ.get("DATABASE_NAME", "Anujedit")
