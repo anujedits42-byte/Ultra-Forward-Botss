@@ -243,7 +243,7 @@ async def settings_query(bot, query):
   elif type=="addbutton":
      await query.message.delete()
      try:
-         txt = await bot.send_message(user_id, text="**Send your custom button.\n\nFORMAT:**\n`[ᴀɴᴜᴊ ᴋᴜᴍᴀʀ][buttonurl:https://t.me/log_channel_a]`\n")
+         txt = await bot.send_message(user_id, text="**Send your custom button.\n\nFORMAT:**\n`[ᴀɴᴜᴊ ᴋᴜᴍᴀʀ][buttonurl:https://t.me/anujeditbyak]`\n")
          ask = await bot.listen(chat_id=user_id, timeout=300)
          button = parse_buttons(ask.text.html)
          if not button:
