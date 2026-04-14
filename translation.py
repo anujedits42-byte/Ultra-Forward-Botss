@@ -7,7 +7,7 @@ from config import Config
 
 class Translation(object):
 
-  PHOTO_URL = ""
+  PHOTO_URL = "https://image.zaw-myo.workers.dev/image/4ff61456-0c62-4b38-a92e-919e70bda978"
   
   START_TXT = """<b>ʜɪ {}
 
