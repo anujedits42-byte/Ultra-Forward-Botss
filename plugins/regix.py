@@ -52,7 +52,7 @@ async def pub_(bot, message):
       return await m.edit(e)
     await msg_edit(m, "<b>ᴘʀᴏᴄᴇssɪɴɢ..</b>")
     try: 
-       await client.get_messages(sts.get("FROM"), sts.get("limit"))
+       await client.get_chat(sts.get("FROM"))
     except:
        await msg_edit(m, f"**sᴏᴜʀᴄᴇ ᴄʜᴀᴛ ᴍᴀʏ ʙᴇ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ / ɢʀᴏᴜᴘ. ᴜsᴇ ᴜsᴇʀ ʙᴏᴛ (ᴜsᴇʀ ᴍᴜsᴛ ʙᴇ ᴍᴇᴍʙᴇʀ ᴏᴠᴇʀ ᴛʜᴇʀᴇ) ᴏʀ ɪғ ᴍᴀᴋᴇ ʏᴏᴜʀ ʙᴏᴛ [Bot](t.me/{_bot['username']}) ᴀɴ ᴀᴅᴍɪɴ ᴏᴠᴇʀ ᴛʜᴇʀᴇ**", retry_btn(frwd_id), True)
        return await stop(client, user)
