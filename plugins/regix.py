@@ -1,11 +1,6 @@
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
-
-
-
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 import os
 import sys 
@@ -29,8 +24,9 @@ logger.setLevel(logging.INFO)
 TEXT = Translation.TEXT
 
 
-
-
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^start_public'))
 async def pub_(bot, message):
@@ -38,48 +34,48 @@ async def pub_(bot, message):
     temp.CANCEL[user] = False
     frwd_id = message.data.split("_")[2]
     if temp.lock.get(user) and str(temp.lock.get(user))=="True":
-      return await message.answer("Please Wait Until Previous Task Complete", show_alert=True)
+      return await message.answer("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴜɴᴛɪʟʟ ᴘʀᴇᴠɪᴏᴜs ᴛᴀsᴋ ᴄᴏᴍᴘʟᴇᴛᴇᴅ.", show_alert=True)
     sts = STS(frwd_id)
     if not sts.verify():
-      await message.answer("Your Are Clicking On My Old Button", show_alert=True)
+      await message.answer("ʏᴏᴜ ᴀʀᴇ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ᴍʏ ᴏɴᴇ ᴏғ ᴏʟᴅ ʙᴜᴛᴛᴏɴ.", show_alert=True)
       return await message.message.delete()
     i = sts.get(full=True)
     if i.TO in temp.IS_FRWD_CHAT:
-      return await message.answer("In Target Chat A Task Is Progressing. Please Wait Until Task Complete", show_alert=True)
-    m = await msg_edit(message.message, "Verifying Your Data's, Please Wait.")
+      return await message.answer("ɪɴ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ᴛᴀsᴋ ɪs ɪɴ ᴘʀᴏɢʀᴇss. ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴜɴᴛɪʟʟ ᴘʀᴇᴠɪᴏᴜs ᴛᴀsᴋ ɪs ᴄᴏᴍᴘʟᴇᴛᴇᴅ.", show_alert=True)
+    m = await msg_edit(message.message, "<i><b>vᴇʀɪғʏɪɴɢ ʏᴏᴜʀ ᴅᴀᴛᴀ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ.</b></i>")
     _bot, caption, forward_tag, data, protect, button = await sts.get_data(user)
     if not _bot:
-      return await msg_edit(m, "You Didn't Added Any Bot. Please Add A Bot Using /settings !", wait=True)
+      return await msg_edit(m, "<code>ʏᴏᴜ ᴅɪᴅ ɴᴏᴛ ᴀᴅᴅᴇᴅ ᴀɴʏ ʙᴏᴛ ʏᴇᴛ ᴜsᴇ /settings</code>", wait=True)
     try:
       client = await start_clone_bot(CLIENT.client(_bot))
     except Exception as e:  
       return await m.edit(e)
-    await msg_edit(m, "Processing...")
+    await msg_edit(m, "<b>ᴘʀᴏᴄᴇssɪɴɢ..</b>")
     try: 
        await client.get_messages(sts.get("FROM"), sts.get("limit"))
     except:
-       await msg_edit(m, f"Source Chat May Be A Private Channel / Group. Use Userbot (User Must Be Member Over There) Or  If Make Your [Bot](t.me/{_bot['username']}) An Admin Over There", retry_btn(frwd_id), True)
+       await msg_edit(m, f"**sᴏᴜʀᴄᴇ ᴄʜᴀᴛ ᴍᴀʏ ʙᴇ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀɴɴᴇʟ / ɢʀᴏᴜᴘ. ᴜsᴇ ᴜsᴇʀ ʙᴏᴛ (ᴜsᴇʀ ᴍᴜsᴛ ʙᴇ ᴍᴇᴍʙᴇʀ ᴏᴠᴇʀ ᴛʜᴇʀᴇ) ᴏʀ ɪғ ᴍᴀᴋᴇ ʏᴏᴜʀ ʙᴏᴛ [Bot](t.me/{_bot['username']}) ᴀɴ ᴀᴅᴍɪɴ ᴏᴠᴇʀ ᴛʜᴇʀᴇ**", retry_btn(frwd_id), True)
        return await stop(client, user)
     try:
        k = await client.send_message(i.TO, "Testing")
        await k.delete()
     except:
-       await msg_edit(m, f"Please Make Your [UserBot / Bot](t.me/{_bot['username']}) Admin In Target Channel With Full Permissions", retry_btn(frwd_id), True)
+       await msg_edit(m, f"**ᴘʟᴇᴀsᴇ [ᴜsᴇʀʙᴏᴛ / ʙᴏᴛ](t.me/{_bot['username']}) ᴀᴅᴍɪɴ ɪɴ ᴛᴀʀɢᴇᴛ ᴄʜᴀɴɴᴇʟ ᴡɪᴛʜ ғᴜʟʟ ᴘᴇʀᴍɪssɪᴏɴ.**", retry_btn(frwd_id), True)
        return await stop(client, user)
     temp.forwardings += 1
     await db.add_frwd(user)
-    await send(client, user, "🩷 Forwarding Started")
+    await send(client, user, "<b>🚥 ғᴏʀᴡᴀʀᴅɪɴɢ sᴛᴀʀᴛᴇᴅ</b>")
     sts.add(time=True)
     sleep = 1 if _bot['is_bot'] else 10
-    await msg_edit(m, "Processing...") 
+    await msg_edit(m, "<code>ᴘʀᴏᴄᴇssɪɴɢ ...</code>") 
     temp.IS_FRWD_CHAT.append(i.TO)
     temp.lock[user] = locked = True
     if locked:
         try:
           MSG = []
           pling=0
-          await edit(m, 'Progressing', 10, sts)
-          print(f"Starting Forwarding Process... From :{sts.get('FROM')} To: {sts.get('TO')} Totel: {sts.get('limit')} Stats : {sts.get('skip')})")
+          await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
+          print(f"Starting Forwarding Process... From :{sts.get('FROM')} To: {sts.get('TO')} Total: {sts.get('limit')} stats : {sts.get('skip')})")
           async for message in client.iter_messages(
             client,
             chat_id=sts.get('FROM'), 
@@ -89,7 +85,7 @@ async def pub_(bot, message):
                 if await is_cancelled(client, user, m, sts):
                    return
                 if pling %20 == 0: 
-                   await edit(m, 'Progressing', 10, sts)
+                   await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
                 pling += 1
                 sts.add('fetched')
                 if message == "DUPLICATE":
@@ -118,14 +114,18 @@ async def pub_(bot, message):
                    sts.add('total_files')
                    await asyncio.sleep(sleep) 
         except Exception as e:
-            await msg_edit(m, f'<b>Error :</b>\n<code>{e}</code>', wait=True)
+            await msg_edit(m, f'<b>ERROR:</b>\n<code>{e}</code>', wait=True)
             temp.IS_FRWD_CHAT.remove(sts.TO)
             return await stop(client, user)
         temp.IS_FRWD_CHAT.remove(sts.TO)
-        await send(client, user, "🎉 Forwarding Completed")
-        await edit(m, 'Completed', "completed", sts) 
+        await send(client, user, "<b>🎉 ғᴏʀᴡᴀᴅɪɴɢ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</b>")
+        await edit(m, 'ᴄᴏᴍᴘʟᴇᴛᴇᴅ', "ᴄᴏᴍᴘʟᴇᴛᴇᴅ", sts) 
         await stop(client, user)
-            
+        
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 async def copy(bot, msg, m, sts):
    try:                                  
      if msg.get("media") and msg.get("caption"):
@@ -144,14 +144,18 @@ async def copy(bot, msg, m, sts):
               reply_markup=msg.get('button'),
               protect_content=msg.get("protect"))
    except FloodWait as e:
-     await edit(m, 'Progressing', e.value, sts)
+     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', e.value, sts)
      await asyncio.sleep(e.value)
-     await edit(m, 'Progressing', 10, sts)
+     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
      await copy(bot, msg, m, sts)
    except Exception as e:
      print(e)
      sts.add('deleted')
-        
+
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 async def forward(bot, msg, m, sts, protect):
    try:                             
      await bot.forward_messages(
@@ -160,23 +164,23 @@ async def forward(bot, msg, m, sts, protect):
            protect_content=protect,
            message_ids=msg)
    except FloodWait as e:
-     await edit(m, 'Progressing', e.value, sts)
+     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', e.value, sts)
      await asyncio.sleep(e.value)
-     await edit(m, 'Progressing', 10, sts)
+     await edit(m, 'ᴘʀᴏɢʀᴇssɪɴɢ', 10, sts)
      await forward(bot, msg, m, sts, protect)
 
 PROGRESS = """
-📈 Percetage : {0} %
+📈 ᴘᴇʀᴄᴇɴᴛᴀɢᴇ : {0} %
 
-♻️ Fetched : {1}
+⭕ ғᴇᴛᴄʜᴇᴅ : {1}
 
-🔥 Forwarded : {2}
+⚙️ ғᴏʀᴡᴀʀᴅᴇᴅ : {2}
 
-🫠 Remaining : {3}
+🗞️ ʀᴇᴍᴀɴɪɴɢ : {3}
 
-📊 Status : {4}
+♻️ sᴛᴀᴛᴜs : {4}
 
-⏳️ ETA : {5}
+⏳️ ᴇᴛᴀ : {5}
 """
 
 async def msg_edit(msg, text, button=None, wait=None):
@@ -188,43 +192,53 @@ async def msg_edit(msg, text, button=None, wait=None):
         if wait:
            await asyncio.sleep(e.value)
            return await msg_edit(msg, text, button, wait)
-        
+
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
 async def edit(msg, title, status, sts):
    i = sts.get(full=True)
-   status = 'Forwarding' if status == 10 else f"Sleeping {status} s" if str(status).isnumeric() else status
+   status = 'ғᴏʀᴡᴀʀᴅɪɴɢ' if status == 10 else f"sʟᴇᴇᴘɪɴɢ {status} s" if str(status).isnumeric() else status
    percentage = "{:.0f}".format(float(i.fetched)*100/float(i.total))
-   
+
    now = time.time()
    diff = int(now - i.start)
    speed = sts.divide(i.fetched, diff)
    elapsed_time = round(diff) * 1000
    time_to_completion = round(sts.divide(i.total - i.fetched, int(speed))) * 1000
    estimated_total_time = elapsed_time + time_to_completion  
+   
    progress = "▰{0}{1}".format(
        ''.join(["▰" for i in range(math.floor(int(percentage) / 10))]),
        ''.join(["▱" for i in range(10 - math.floor(int(percentage) / 10))]))
-   button =  [[InlineKeyboardButton(title, f'fwrdstatus#{status}#{estimated_total_time}#{percentage}#{i.id}')]]
+   button =  [[InlineKeyboardButton(progress, f'fwrdstatus#{status}#{estimated_total_time}#{percentage}#{i.id}')]]
    estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
    estimated_total_time = estimated_total_time if estimated_total_time != '' else '0 s'
 
-   text = TEXT.format(i.fetched, i.total_files, i.duplicate, i.deleted, i.skip, status, percentage, estimated_total_time, progress)
-   if status in ["cancelled", "completed"]:
+   text = TEXT.format(i.total, i.fetched, i.total_files, i.duplicate, i.deleted, i.skip, i.filtered, status, percentage, title)
+   if status in ["ᴄᴀɴᴄᴇʟʟᴇᴅ", "ᴄᴏᴍᴘʟᴇᴛᴇᴅ"]:
       button.append(
-         [InlineKeyboardButton('📢 Updates', url='https://t.me/anujedits76'),
-         InlineKeyboardButton('💬 Support', url='https://t.me/anujedits76')]
+         [InlineKeyboardButton('💟sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ💟', url='https://t.me/log_channel_a')])
+      button.append(
+         [InlineKeyboardButton('💠ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ💠', url='https://t.me/log_channel_a')]
          )
    else:
-      button.append([InlineKeyboardButton('✖️ Cancel ✖️', 'terminate_frwd')])
+      button.append([InlineKeyboardButton('• ᴄᴀɴᴄᴇʟ', 'terminate_frwd')])
    await msg_edit(msg, text, InlineKeyboardMarkup(button))
-   
+
 async def is_cancelled(client, user, msg, sts):
    if temp.CANCEL.get(user)==True:
       temp.IS_FRWD_CHAT.remove(sts.TO)
-      await edit(msg, "Cancelled", "completed", sts)
-      await send(client, user, "❌ Forwarding Process Cancelled")
+      await edit(msg, "ᴄᴀɴᴄᴇʟʟᴇᴅ", "ᴄᴏᴍᴘʟᴇᴛᴇᴅ", sts)
+      await send(client, user, "<b>❌ ғᴏʀᴡᴀʀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ</b>")
       await stop(client, user)
       return True 
    return False 
+
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 async def stop(client, user):
    try:
@@ -234,13 +248,18 @@ async def stop(client, user):
    await db.rmve_frwd(user)
    temp.forwardings -= 1
    temp.lock[user] = False 
-    
+
 async def send(bot, user, text):
    try:
       await bot.send_message(user, text=text)
    except:
       pass 
-     
+
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
+
+
 def custom_caption(msg, caption):
   if msg.media:
     if (msg.video or msg.document or msg.audio or msg.photo):
@@ -255,6 +274,10 @@ def custom_caption(msg, caption):
           return caption.format(filename=file_name, size=get_size(file_size), caption=fcaption)
         return fcaption
   return None
+
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 def get_size(size):
   units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
@@ -271,6 +294,10 @@ def media(msg):
      if media:
         return getattr(media, 'file_id', None)
   return None 
+  
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 def TimeFormatter(milliseconds: int) -> str:
     seconds, milliseconds = divmod(int(milliseconds), 1000)
@@ -285,51 +312,54 @@ def TimeFormatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 def retry_btn(id):
-    return InlineKeyboardMarkup([[InlineKeyboardButton('♻️ Retry ♻️', f"start_public_{id}")]])
-
-
-
+    return InlineKeyboardMarkup([[InlineKeyboardButton('♻️ ʀᴇᴛʀʏ ♻️', f"start_public_{id}")]])
 
 @Client.on_callback_query(filters.regex(r'^terminate_frwd$'))
 async def terminate_frwding(bot, m):
     user_id = m.from_user.id 
     temp.lock[user_id] = False
     temp.CANCEL[user_id] = True 
-    await m.answer("Forwarding Cancelled !", show_alert=True)
-          
+    await m.answer("ғᴏʀᴡᴀʀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ !", show_alert=True)
 
-
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
 @Client.on_callback_query(filters.regex(r'^fwrdstatus'))
 async def status_msg(bot, msg):
     _, status, est_time, percentage, frwd_id = msg.data.split("#")
     sts = STS(frwd_id)
     if not sts.verify():
-       fetched, forwarded, remaining = 0
+       fetched, forwarded, remaining, skipped = 0
     else:
+       total = sts.get('total')
+       skipped = sts.get('skip')
        fetched, forwarded = sts.get('fetched'), sts.get('total_files')
-       remaining = fetched - forwarded 
+       remaining = total - forwarded - skipped
     est_time = TimeFormatter(milliseconds=est_time)
     est_time = est_time if (est_time != '' or status not in ['completed', 'cancelled']) else '0 s'
     return await msg.answer(PROGRESS.format(percentage, fetched, forwarded, remaining, status, est_time), show_alert=True)
-                  
 
+#Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
 
-                  
+@Client.on_message(filters.command("stop"))
+async def stop_forwarding(bot, message):
+    user_id = message.from_user.id
+    if temp.lock.get(user_id):
+        temp.lock[user_id] = False
+        temp.CANCEL[user_id] = True
+        await message.reply("🛑 ғᴏʀᴡᴀʀᴅɪɴɢ ᴄᴀɴᴄᴇʟʟᴇᴅ !", quote=True)
+        # Optionally, notify the user in a more detailed way.
+    else:
+        await message.reply("❌ ɴᴏ ᴏɴɢᴏɪɴɢ ғᴏʀᴡᴀʀᴅɪɴɢ ᴘʀᴏᴄᴇss ᴛᴏ ᴄᴀɴᴄᴇʟ.", quote=True)
+
 @Client.on_callback_query(filters.regex(r'^close_btn$'))
 async def close(bot, update):
     await update.answer()
     await update.message.delete()
-    await update.message.reply_to_message.delete()
-
-
-
-
-
-
-
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
+    
+ #Dont Remove My Credit @Silicon_Bot_Update 
+#This Repo Is By @Silicon_Official 
+# For Any Kind Of Error Ask Us In Support Group @Silicon_Botz 
