@@ -28,6 +28,27 @@ main_buttons = [[
 @Client.on_message(filters.private & filters.command(['start']))
 async def start(client, message):
     user = message.from_user
+
+    # SAFE DB
+    try:
+        if not await db.is_user_exist(user.id):
+            await db.add_user(user.id, message.from_user.mention)
+    except Exception as e:
+        print("DB ERROR:", e)
+
+    # SAFE PHOTO
+    try:
+        await client.send_photo(
+            chat_id=message.chat.id,
+            photo=Translation.PHOTO_URL,
+            caption=Translation.START_TXT.format(message.from_user.first_name),
+            reply_markup=InlineKeyboardMarkup(main_buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+    except Exception as e:
+        print("PHOTO ERROR:", e)
+        await message.reply_text("Bot Working ✅ (Photo error)")
+    user = message.from_user
     if Config.FORCE_SUB_ON:
         try:
             member = await client.get_chat_member(Config.FORCE_SUB_CHANNEL, user.id)
